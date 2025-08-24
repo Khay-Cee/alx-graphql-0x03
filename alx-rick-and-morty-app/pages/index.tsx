@@ -2,6 +2,8 @@ import { useQuery } from "@apollo/client"
 import { GET_EPISODES } from "@/graphql/queries"
 import { EpisodeProps } from "@/interfaces"
 import EpisodeCard from "@/components/common/EpisodeCard"
+import ErrorBoundary from '@/components/ErrorBoundary'
+import ErrorProneComponent from '@/components/ErrorProneComponent'
 import { useEffect, useState } from "react"
 
 const Home: React.FC = () => {
@@ -29,6 +31,9 @@ const Home: React.FC = () => {
         <h1 className="text-4xl font-bold tracking-wide">Rick and Morty Episodes</h1>
         <p className="mt-2 text-lg italic">Explore the multiverse of adventures!</p>
       </header>
+
+      {/* Uncomment the line below to test ErrorBoundary with ErrorProneComponent */}
+      {/* <ErrorProneComponent /> */}
 
       {/* Main Content */}
       <main className="flex-grow p-6">
